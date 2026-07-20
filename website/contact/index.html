@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Crapcraft.nz</title>
+    
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <a href="https://crapcraft.nz">
+        <img src="../logo.png" alt="logo">
+    </a>
+    <div class="header-front-text">
+        <h1>Crapcraft.nz</h1>
+        <p>A simple homelab with useful services</p>
+    </div>
+</header>
+<ul class="topnav">
+  <li><a href="../">Home</a></li>
+  <li><a href="../privacy">Privacy/TOS</a></li>
+  <li><a href="../about">About</a></li>
+</ul>
+<main>
+    <nav>
+        <h1>if you feel the need to contact the owner for reasons like services are down or for suggestions or for security issues use the following options listed below</h1>
+        <p><strong>Email:</strong> <a href="mailto:admin@crapcraft.nz">admin@crapcraft.nz</a></p>
+        <p><strong>Discord Server:</strong> <a href="https://discord.gg/thWqDvezuf" target="_blank">discord.gg/thWqDvezuf</a></p>
+    </nav>
+</main>
+<footer>
+    <div class="footer-content">
+        <p>
+            <small
+                >By using any crapcraft.nz service you agree to our
+                <a href="https://crapcraft.nz/privacy">Privacy Policy & Terms of Service</a>.</small
+            >
+        </p>
+    </div>
+    <div class="footer-version">
+        <p>v<span id="version">...</span></p>
+    </div>
+</footer>
+    <script>
+        fetch("../version.json")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("version").textContent = data.Version;
+            });
+    </script>
+</body>
+</html>

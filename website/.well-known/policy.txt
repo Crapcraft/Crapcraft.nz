@@ -1,0 +1,17 @@
+crapcraft.nz Security Policy
+=============================
+
+The operator of crapcraft.nz is a hobbyist with limited security expertise.
+Any assistance, responsible disclosure, or advice regarding the security of
+this platform is genuinely appreciated.
+
+If you find a vulnerability or have security concerns, please contact:
+
+  Email: admin@crapcraft.nz
+  Discord: @waayer (prefered so we can actually reply to you)
+
+We will do our best to respond promptly and appreciate your patience.
+
+No bug bounty is offered - this is a personal, non-commercial project.
+Please do not attempt destructive testing. If you're not sure whether
+something is okay, just ask first.
