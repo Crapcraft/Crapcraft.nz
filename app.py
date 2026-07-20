@@ -46,9 +46,22 @@ LIDARR_HEADERS = {
     "X-API-Key": LIDARR_KEY
 }
 
+#bazarr api urls/keys
+BAZARR_URL = os.getenv("BAZARR_URL")
+BAZARR_KEY = os.getenv("BAZARR_KEY")
+BAZARR_HEADERS = {
+    "X-API-Key": BAZARR_KEY
+}
+
 #openwebui api url
 OPENWEBUI_URL = os.getenv("OPENWEBUI_URL")
 
+#qbittorrent api urls/keys
+QBITTORRENT_URL = os.getenv("QBITTORRENT_URL")
+QBITTORRENT_KEY = os.getenv("QBITTORRENT_KEY")
+QBITTORRENT_HEADERS = {
+    "Authorization": f"Bearer {QBITTORRENT_KEY}"  
+}
 
 def jellyfin():
     response = requests.get(f"{JF_URL}/Items/Counts", headers=JF_HEADERS)
@@ -96,11 +109,24 @@ def lidarr():
         "LidarrVersion": data["version"],
     }
 
+def bazarr():
+    response = requests.get(f"{BAZARR_URL}/api/system/status", headers=BAZARR_HEADERS)
+    status = response.json()["data"]
+    return {
+        "BazarrVersion": status.get("bazarr_version", "Unknown"),
+    }
+
 def openwebui():
     response = requests.get(f"{OPENWEBUI_URL}/api/version")
     data = response.json()
     return {
         "OpenwebuiVersion": data["version"],
+    }
+
+def qbittorrent():
+    response = requests.get(f"{QBITTORRENT_URL}/api/v2/app/version", headers=QBITTORRENT_HEADERS)
+    return {
+        "QbittorrentVersion": response.text,
     }
 
 def results():
@@ -111,7 +137,9 @@ def results():
     stats.update(radarr())
     stats.update(sonarr())
     stats.update(lidarr())
+    stats.update(bazarr())
     stats.update(openwebui())
+    stats.update(qbittorrent())
 
     with open("./website/stats.json", "w") as f:
         json.dump(stats, f)
@@ -122,5 +150,7 @@ prowlarr()
 radarr()
 sonarr()
 lidarr()
+bazarr()
 openwebui()
+qbittorrent()
 results()

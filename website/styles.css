@@ -41,7 +41,7 @@ header a {
 
 nav {
   width: 30%;
-  background: #ccc;
+  background: #b9b9b9;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 article {
