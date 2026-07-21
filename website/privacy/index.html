@@ -160,18 +160,22 @@
         <p><strong>Status:</strong> <a href="https://uptime.crapcraft.nz" target="_blank">uptime.crapcraft.nz</a></p>
     </nav>
 </main>
-        <footer>
-            <div class="footer-content">
-                <p>
-                    <small
-                        >By using any crapcraft.nz service you agree to our Privacy Policy & Terms of Service.</small
-                    >
-                </p>
-            </div>
-            <div class="footer-version">
-                <p>v<span id="version">...</span></p>
-            </div>
-        </footer>
+<footer>
+        <a href="https://github.com/Crapcraft">
+            <img src="../github.svg" alt="Github logo" style="width: 20px; height: 20px;"/>
+        </a>
+        <div class="footer-content">
+            <p>
+                <small
+                >By using any crapcraft.nz service you agree to our
+                <a href="https://crapcraft.nz/privacy">Privacy Policy & Terms of Service</a>.
+                </small>
+            </p>
+        </div>
+        <div class="footer-version">
+            <p>v<span id="version">...</span></p>
+        </div>
+</footer>
         <script>
             fetch("../version.json")
                 .then(response => response.json())
