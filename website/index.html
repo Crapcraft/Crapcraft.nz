@@ -153,7 +153,7 @@
                 <p>v<span id="version">...</span></p>
             </div>
         </footer>
-        <script>
+        <script> <!-- this script grabs the data from stats.json and sets it so the html is able to grab and display the data-->
             fetch("./stats.json")
                 .then(response => response.json())
                 .then(data => {
@@ -172,7 +172,7 @@
                     document.getElementById("qbittorrent-version").textContent = data.QbittorrentVersion;
                 });
         </script>
-        <script>
+        <script> <!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
             fetch("./version.json")
                 .then(response => response.json())
                 .then(data => {
