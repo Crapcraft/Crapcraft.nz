@@ -1,17 +1,21 @@
+#importing and loading
+
 import requests
 import os
 import json
 from dotenv import load_dotenv 
 load_dotenv() 
 
-# jellyfin api urls/keys
+#grabs the url and api key from .env and sets them as variables
+#uses the JF_API variable to add the api key as JF_HEADERS so the api will accept the requests
 JF_URL = os.getenv("JF")
 JF_API = os.getenv("JF_KEY")
 JF_HEADERS = {
     "Authorization": f'MediaBrowser Token="{JF_API}"'
 }
 
-#seerr api urls/keys
+#grabs the url and api key from .env and sets them as variables
+#uses the SEERR_KEY variable to add the api key as SEERR_HEADERS so the api will accept the requests
 SEERR_URL = os.getenv("SEERR_URL")
 SEERR_KEY = os.getenv("SEERR_KEY")
 SEERR_HEADERS = {
@@ -63,6 +67,7 @@ QBITTORRENT_HEADERS = {
     "Authorization": f"Bearer {QBITTORRENT_KEY}"  
 }
 
+#jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
     response = requests.get(f"{JF_URL}/Items/Counts", headers=JF_HEADERS)
     data = response.json()
@@ -144,6 +149,7 @@ def results():
     with open("./website/stats.json", "w") as f:
         json.dump(stats, f)
         print(stats)
+    
 jellyfin()
 seerr()
 prowlarr()
