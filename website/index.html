@@ -43,10 +43,18 @@
                         <a href="https://seerr.crapcraft.nz">
                             <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/seerr.svg" style="width: 42px; height: 42px" />
                         </a>
-                        <h3><a href="https://Seerr.crapcraft.nz">Seerr</a></h3>
+                        <h3><a href="https://seerr.crapcraft.nz">Seerr</a></h3>
                         <p>Requests: <span id="requests-total">...</span></p>
                         <p>Pending: <span id="requests-pending">...</span></p>
                         <p>Approved: <span id="requests-approved">...</span></p>
+                    </div>
+                    <div class="article-box">
+                        <a href="https://photos.crapcraft.nz">
+                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" style="width: 42px; height: 42px" />
+                        </a>
+                        <h3><a href="https://photos.crapcraft.nz">Immich</a></h3>
+                        <p>Photos: <span id="immich-photos">...</span></p>
+                        <p>Videos: <span id="immich-videos">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://ai.crapcraft.nz">
@@ -70,6 +78,15 @@
                 </div>
                 <h2>Arr Stack/Infrastructure</h2>
                 <div class="article-links">
+                    <div class="article-box">
+                        <a href="https://tracearr.crapcraft.nz">
+                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tracearr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                        </a>
+                        <h3><a href="https://tracearr.crapcraft.nz">Tracearr</a></h3>
+                        <p>Active Streams: <span id="tracearr-streams">...</span></p>
+                        <p>Total Sessions: <span id="tracearr-sessions">...</span></p>
+                        <p>Total Users: <span id="tracearr-users">...</span></p>
+                    </div>
                     <div class="article-box">
                         <a href="https://prowlarr.crapcraft.nz">
                             <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg" style="width: 42px; height: 42px; align-items: center;" />
@@ -128,7 +145,7 @@
                     <iframe src="https://radio.crapcraft.nz/public/crapcraft.nz/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
                 </div>
                 <a href="https://uptime.crapcraft.nz">
-                    <p><strong>Uptime Kuma</strong></p>
+                    <p><strong>Uptime Kuma</strong></p>   "diskSize": "100.0 GiB",
                 </a>
                 <div class="nav-links">
                     <p>Jellyfin: <img src="https://uptime.crapcraft.nz/api/badge/1/status" style="vertical-align: middle;"></p>
@@ -170,6 +187,11 @@
                     document.getElementById("bazarr-version").textContent = data.BazarrVersion;
                     document.getElementById("openwebui-version").textContent = data.OpenwebuiVersion;
                     document.getElementById("qbittorrent-version").textContent = data.QbittorrentVersion;
+                    document.getElementById("tracearr-sessions").textContent = data.TotalSessions;
+                    document.getElementById("tracearr-streams").textContent = data.ActiveStreams;
+                    document.getElementById("tracearr-users").textContent = data.TotalUsers;
+                    document.getElementById("immich-photos").textContent = data.Photos;
+                    document.getElementById("immich-videos").textContent = data.Videos;
                 });
         </script>
         <script> <!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->

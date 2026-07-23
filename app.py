@@ -73,6 +73,18 @@ QBITTORRENT_HEADERS = {
     "Authorization": f"Bearer {QBITTORRENT_KEY}"  
 }
 
+TRACEARR_URL = os.getenv("TRACEARR_URL")
+TRACEARR_KEY = os.getenv("TRACEARR_KEY")
+TRACEARR_HEADERS = {
+    "Authorization": f"Bearer {TRACEARR_KEY}"
+}
+
+IMMICH_URL = os.getenv("IMMICH_URL")
+IMMICH_KEY = os.getenv("IMMICH_KEY")
+IMMICH_HEADERS = {
+    "X-API-Key": IMMICH_KEY
+}
+
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
     response = requests.get(f"{JF_URL}/Items/Counts", headers=JF_HEADERS)
@@ -147,6 +159,23 @@ def qbittorrent():
         "QbittorrentVersion": response.text,
     }
 
+def tracearr():
+    response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS)
+    data = response.json()
+    return {
+        "ActiveStreams": data["activeStreams"],
+        "TotalSessions": data["totalSessions"],
+        "TotalUsers": data["totalUsers"]
+    }
+
+def immich():
+    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
+    data = response.json()
+    return {
+        "Photos": data["photos"],
+        "Videos": data["videos"]
+    }
+
 #function that grabs the data from the service functions and sets it in stats{}
 def results():
     stats = {}
@@ -159,6 +188,8 @@ def results():
     stats.update(bazarr())
     stats.update(openwebui())
     stats.update(qbittorrent())
+    stats.update(tracearr())
+    stats.update(immich())
 
 #sends the data in stats{} to a .json file at ./website/stats.json
 #the reason it sends the data to ./website/stats.json is so caddy can serv the file as the root folder for caddy is ./website because it it was this folder the .env would be exposed
@@ -176,4 +207,6 @@ lidarr()
 bazarr()
 openwebui()
 qbittorrent()
+tracearr()
+immich()
 results()
