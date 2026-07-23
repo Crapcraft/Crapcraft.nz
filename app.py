@@ -7,10 +7,10 @@ load_dotenv()
 
 #grabs the url and api key from .env and sets them as variables
 #uses the JF_API variable to add the api key to JF_HEADERS so the api will accept the requests
-JF_URL = os.getenv("JF")
-JF_API = os.getenv("JF_KEY")
+JELLYFIN_URL = os.getenv("JELLYFIN_URL")
+JELLYFIN_KEY = os.getenv("JELLYFIN_KEY")
 JF_HEADERS = {
-    "Authorization": f'MediaBrowser Token="{JF_API}"'
+    "Authorization": f'MediaBrowser Token="{JELLYFIN_KEY}"'
 }
 
 #grabs the url and api key from .env and sets them as variables
@@ -87,7 +87,7 @@ IMMICH_HEADERS = {
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
     try:
-        response = requests.get(f"{JF_URL}/Items/Counts", headers=JF_HEADERS)
+        response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS)
         data = response.json()
         return {
             "MovieCount": data["MovieCount"],
