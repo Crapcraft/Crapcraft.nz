@@ -17,6 +17,7 @@
                 <h1>Crapcraft.nz</h1>
                 <p>A simple homelab with useful services</p>
             </div>
+            <div id="currentTime"></div>
         </header>
         <ul class="topnav">
             <li><a href="./privacy">Privacy/TOS</a></li>
@@ -174,36 +175,8 @@
                 <p>v<span id="version">...</span></p>
             </div>
         </footer>
-        <script> <!-- this script grabs the data from stats.json and sets it so the html is able to grab and display the data-->
-            fetch("./stats.json")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("movie-count").textContent = data.MovieCount;
-                    document.getElementById("series-count").textContent = data.EpisodeCount;
-                    document.getElementById("song-count").textContent = data.SongCount;
-                    document.getElementById("requests-total").textContent = data.RequestsTotal;
-                    document.getElementById("requests-pending").textContent = data.RequestsPending;
-                    document.getElementById("requests-approved").textContent = data.RequestsApproved;
-                    document.getElementById("prowlarr-version").textContent = data.ProwlarrVersion;
-                    document.getElementById("radarr-version").textContent = data.RadarrVersion;
-                    document.getElementById("sonarr-version").textContent = data.SonarrVersion;
-                    document.getElementById("lidarr-version").textContent = data.LidarrVersion;
-                    document.getElementById("bazarr-version").textContent = data.BazarrVersion;
-                    document.getElementById("openwebui-version").textContent = data.OpenwebuiVersion;
-                    document.getElementById("qbittorrent-version").textContent = data.QbittorrentVersion;
-                    document.getElementById("tracearr-sessions").textContent = data.TotalSessions;
-                    document.getElementById("tracearr-streams").textContent = data.ActiveStreams;
-                    document.getElementById("tracearr-users").textContent = data.TotalUsers;
-                    document.getElementById("immich-photos").textContent = data.Photos;
-                    document.getElementById("immich-videos").textContent = data.Videos;
-                });
-        </script>
-        <script> <!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
-            fetch("./version.json")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("version").textContent = data.Version;
-                });
-        </script>
+        <script src="javascript/stats.js"></script><!-- this script grabs the data from stats.json and sets it so the html is able to grab and display the data-->
+        <script src="javascript/version.js"></script><!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
+        <script src="javascript/time.js"></script> 
     </body>
 </html>

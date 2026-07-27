@@ -19,6 +19,7 @@
         <h1>Crapcraft.nz</h1>
         <p>A simple homelab with useful services</p>
     </div>
+    <div id="currentTime"></div>
 </header>
 <ul class="topnav">
   <li><a href="../">Home</a></li>
@@ -175,12 +176,7 @@
             <p>v<span id="version">...</span></p>
         </div>
 </footer>
-        <script>
-            fetch("../version.json")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("version").textContent = data.Version;
-                });
-        </script>
+    <script src="../javascript/version.js"></script><!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
+    <script src="../javascript/time.js"></script> 
 </body>
 </html>
