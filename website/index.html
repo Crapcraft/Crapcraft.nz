@@ -6,31 +6,30 @@
 
         <title>Crapcraft.nz</title>
 
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
         <header>
-            <img src="logo.png" alt="logo" />
+            <img src="./images/logo.png" alt="logo" />
             <div class="header-front-text">
                 <h1>Crapcraft.nz</h1>
                 <p>A simple homelab with useful services</p>
             </div>
         </header>
         <ul class="topnav">
-            <li><a href="/privacy">Privacy/TOS</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="./privacy">Privacy/TOS</a></li>
+            <li><a href="./contact">Contact</a></li>
+            <li><a href="./about">About</a></li>
         </ul>
         <main>
             <article>
-                <!--<p>hello random reader welcome to my corner of the internet</p>-->
                 <h2>Links</h2>
                 <div class="article-links">
                     <div class="article-box">
                         <a href="https://jellyfin.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/jellyfin.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://jellyfin.crapcraft.nz">Jellyfin</a></h3>
                         <p>Songs: <span id="song-count">...</span></p>
@@ -39,7 +38,7 @@
                     </div>
                     <div class="article-box">
                         <a href="https://seerr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/seerr.svg" style="width: 42px; height: 42px" />
+                            <img src="images/seerr.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://seerr.crapcraft.nz">Seerr</a></h3>
                         <p>Requests: <span id="requests-total">...</span></p>
@@ -48,7 +47,7 @@
                     </div>
                     <div class="article-box">
                         <a href="https://photos.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" style="width: 42px; height: 42px" />
+                            <img src="images/immich.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://photos.crapcraft.nz">Immich</a></h3>
                         <p>Photos: <span id="immich-photos">...</span></p>
@@ -56,27 +55,27 @@
                     </div>
                     <div class="article-box">
                         <a href="https://ai.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/open-webui.svg" style="width: 42px; height: 42px" />
+                            <img src="images/open-webui.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://ai.crapcraft.nz">Open WebUI</a></h3>
                         <p>Version <span id="openwebui-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://map.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/minecraft.svg" style="width: 42px; height: 42px" />
+                            <img src="images/minecraft.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://map.crapcraft.nz">Minecraft</a></h3>
                         <p>DM for access</p>
                     </div>
                     <div class="article-box">
                         <a href="https://searxng.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/searxng.svg" style="width: 42px; height: 42px" />
+                            <img src="images/searxng.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://searxng.crapcraft.nz">SearXNG</a></h3>
                     </div>
                     <div class="article-box">
                         <a href="https://fmd.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/fmd.svg" style="width: 42px; height: 42px" />
+                            <img src="images/fmd.svg" style="width: 42px; height: 42px" />
                         </a>
                         <h3><a href="https://fmd.crapcraft.nz">Find My Device</a></h3>
                     </div>
@@ -85,7 +84,7 @@
                 <div class="article-links">
                     <div class="article-box">
                         <a href="https://tracearr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tracearr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/tracearr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://tracearr.crapcraft.nz">Tracearr</a></h3>
                         <p>Active Streams: <span id="tracearr-streams">...</span></p>
@@ -94,44 +93,44 @@
                     </div>
                     <div class="article-box">
                         <a href="https://prowlarr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/prowlarr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://Prowlarr.crapcraft.nz">Prowlarr</a></h3>
                         <p>Version: <span id="prowlarr-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://radarr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/radarr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://radarr.crapcraft.nz">Radarr</a></h3>
                         <p>Version: <span id="radarr-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://sonarr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/sonarr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://sonarr.crapcraft.nz">Sonarr</a></h3>
                         <p>Version: <span id="sonarr-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://lidarr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/lidarr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/lidarr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://lidarr.crapcraft.nz">Lidarr</a></h3>
                         <p>Version: <span id="lidarr-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://bazarr.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bazarr.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/bazarr.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
                         <h3><a href="https://bazarr.crapcraft.nz">Bazarr</a></h3>
                         <p>Version: <span id="bazarr-version">...</span></p>
                     </div>
                     <div class="article-box">
                         <a href="https://qb.crapcraft.nz">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/qbittorrent.svg" style="width: 42px; height: 42px; align-items: center;" />
+                            <img src="images/qbittorrent.svg" style="width: 42px; height: 42px; align-items: center;" />
                         </a>
-                        <h3><a href="https://qb.crapcraft.nz">Bazarr</a></h3>
+                        <h3><a href="https://qb.crapcraft.nz">qBittorrent</a></h3>
                         <p>Version: <span id="qbittorrent-version">...</span></p>
                     </div>
                 </div>
@@ -140,12 +139,12 @@
                 <div class="nav-frame">
                     <a href="https://radio.crapcraft.nz/public/homepage">
                         <p><strong>Crapcraft Minecraft FM
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJhZGlvLXRvd2VyLWljb24gbHVjaWRlLXJhZGlvLXRvd2VyIj48cGF0aCBkPSJNNC45IDE2LjFDMSAxMi4yIDEgNS44IDQuOSAxLjkiLz48cGF0aCBkPSJNNy44IDQuN2E2LjE0IDYuMTQgMCAwIDAtLjggNy41Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSI5IiByPSIyIi8+PHBhdGggZD0iTTE2LjIgNC44YzIgMiAyLjI2IDUuMTEuOCA3LjQ3Ii8+PHBhdGggZD0iTTE5LjEgMS45YTkuOTYgOS45NiAwIDAgMSAwIDE0LjEiLz48cGF0aCBkPSJNOS41IDE4aDUiLz48cGF0aCBkPSJtOCAyMiA0LTExIDQgMTEiLz48L3N2Zz4="/></strong></p>
+                        <img src="images/radio-tower.svg"/></strong></p>
                     </a>
                     <iframe src="https://radio.crapcraft.nz/public/homepage/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
                     <a href="https://radio.crapcraft.nz/public/crapcraft.nz">
                         <p><strong>Crapcraft FM
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJhZGlvLXRvd2VyLWljb24gbHVjaWRlLXJhZGlvLXRvd2VyIj48cGF0aCBkPSJNNC45IDE2LjFDMSAxMi4yIDEgNS44IDQuOSAxLjkiLz48cGF0aCBkPSJNNy44IDQuN2E2LjE0IDYuMTQgMCAwIDAtLjggNy41Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSI5IiByPSIyIi8+PHBhdGggZD0iTTE2LjIgNC44YzIgMiAyLjI2IDUuMTEuOCA3LjQ3Ii8+PHBhdGggZD0iTTE5LjEgMS45YTkuOTYgOS45NiAwIDAgMSAwIDE0LjEiLz48cGF0aCBkPSJNOS41IDE4aDUiLz48cGF0aCBkPSJtOCAyMiA0LTExIDQgMTEiLz48L3N2Zz4="/></strong></p>
+                        <img src="images/radio-tower.svg"/></strong></p>
                     </a>
                     <iframe src="https://radio.crapcraft.nz/public/crapcraft.nz/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
                 </div>
@@ -161,13 +160,13 @@
         </main>
         <footer>
             <a href="https://github.com/Crapcraft/Crapcraft.nz">
-                <img src="https://img.shields.io/badge/Source_Code-gray?logo=github" alt="Github logo"/>
+                <img src="images/source-code.svg" alt="Github logo"/>
             </a>
             <div class="footer-content">
                 <p>
                     <small
                         >By using any crapcraft.nz service you agree to our
-                        <a href="/privacy">Privacy Policy & Terms of Service</a>.</small
+                        <a href="./privacy">Privacy Policy & Terms of Service</a>.</small
                     >
                 </p>
             </div>
