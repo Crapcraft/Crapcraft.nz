@@ -12,18 +12,20 @@
     </head>
     <body>
         <header>
-            <img src="./images/logo.png" alt="logo" />
-            <div class="header-front-text">
-                <h1>Crapcraft.nz</h1>
-                <p>A simple homelab with useful services</p>
+            <div class="header-top">
+                <img src="./images/logo.png" alt="logo"></img>
+                <div class="header-front-text">
+                    <h1>Crapcraft.nz</h1>
+                    <p>A simple homelab with useful services</p>
+                </div>
+                <ul class="topnav">
+                    <li><a href="./privacy">Privacy/TOS</a></li>
+                    <li><a href="./contact">Contact</a></li>
+                    <li><a href="./about">About</a></li>
+                </ul>
             </div>
             <div id="currentTime"></div>
         </header>
-        <ul class="topnav">
-            <li><a href="./privacy">Privacy/TOS</a></li>
-            <li><a href="./contact">Contact</a></li>
-            <li><a href="./about">About</a></li>
-        </ul>
         <main>
             <article>
                 <h2>Links</h2>
@@ -139,23 +141,22 @@
             <nav>
                 <div class="nav-frame">
                     <a href="https://radio.crapcraft.nz/public/homepage">
-                        <p><strong>Crapcraft Minecraft FM
-                        <img src="images/radio-tower.svg"/></strong></p>
+                        <p><strong>Crapcraft Minecraft FM</strong></p>
                     </a>
                     <iframe src="https://radio.crapcraft.nz/public/homepage/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
                     <a href="https://radio.crapcraft.nz/public/crapcraft.nz">
-                        <p><strong>Crapcraft FM
-                        <img src="images/radio-tower.svg"/></strong></p>
+                        <p><strong>Crapcraft FM</strong></p>
                     </a>
                     <iframe src="https://radio.crapcraft.nz/public/crapcraft.nz/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
                 </div>
                 <a href="https://uptime.crapcraft.nz">
-                    <p><strong>Uptime Kuma</strong></p>
+                    <p><strong>Uptime Kuma</strong> <span class="badge">New</span></p>
                 </a>
                 <div class="nav-links">
-                    <p>Jellyfin: <img src="https://uptime.crapcraft.nz/api/badge/1/status" style="vertical-align: middle;"></p>
+                    <iframe src="https://uptime.crapcraft.nz/status/crapcraft" allowtransparency="true" style="width: 100%; min-height: 150px; height: 200px; border: 0"></iframe>
+                    <!--<p>Jellyfin: <img src="https://uptime.crapcraft.nz/api/badge/1/status" style="vertical-align: middle;"></p>
                     <p>Seerr: <img src="https://uptime.crapcraft.nz/api/badge/5/status" style="vertical-align: middle;"></p>
-                    <p>Authentik: <img src="https://uptime.crapcraft.nz/api/badge/20/status" style="vertical-align: middle;"></p>
+                    <p>Authentik: <img src="https://uptime.crapcraft.nz/api/badge/20/status" style="vertical-align: middle;"></p>-->
                 </div>
             </nav>
         </main>
