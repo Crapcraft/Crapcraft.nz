@@ -1,3 +1,7 @@
+Warning: Identity file /home/admin/.ssh/id_rsa not accessible: No such file or directory.
+Warning: Identity file /home/admin/.ssh/id_rsa not accessible: No such file or directory.
+Warning: Identity file /home/admin/.ssh/id_rsa not accessible: No such file or directory.
+Warning: Identity file /home/admin/.ssh/id_rsa not accessible: No such file or directory.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +35,7 @@
 <main>
     <nav>
         <h1>Privacy Policy and TOS</h1>
-        <p><em>Last updated: July 2026</em></p>
+        <p><em>Last updated: 31 July 2026</em></p>
 
         <h2>Privacy Policy</h2>
 
@@ -56,7 +60,7 @@
         <p><strong>SearXNG:</strong> Search queries (not logged or stored beyond the request) - used for privacy-respecting search aggregation.</p>
         <p><strong>Open WebUI:</strong> AI conversation history, username via Authentik LDAP - used for the AI chat interface.</p>
         <p><strong>Tracearr:</strong> Username, media tracking data, watch history and statistics - used for media activity tracking and statistics.</p>
-        <p><strong>Uptime Kuma:</strong> No personal data collected via the public status page - service uptime metrics only.</p>
+        <p><strong>Uptime Kuma:</strong> No personal data collected via the public status page - service uptime metrics only. Hosted on a separate VPS (outside New Zealand) so the status page remains available even when the homelab is down or under maintenance.</p>
         <p><strong>FMHY Docs:</strong> Server access logs only (IP, timestamp, user-agent) - no accounts required, used for a static documentation site.</p>
         <p><strong>Zipline:</strong> Files uploaded by the administrator, access timestamps, IP addresses of viewers - used as a CDN for hosting publicly viewable files (images, video, audio, etc.); upload access is restricted to the administrator.</p>
         <p><strong>AzuraCast:</strong> Listener IP address, listener agent, listening duration (for the public radio stream), plus account credentials and station config for admin access - used for internet radio streaming and public stream listener metrics.</p>
@@ -70,7 +74,7 @@
         <p>Your data is never sold, used for advertising, shared with third parties, or processed for any commercial purpose. Full stop.</p>
 
         <h3>4. Where Data is Stored</h3>
-        <p>All data is stored on privately owned hardware in New Zealand. No third-party cloud services (AWS, Google Cloud, Azure, etc.) are used for storage.</p>
+        <p>All data is stored on privately owned hardware in New Zealand, with one exception: Uptime Kuma (the status page) runs on a separate virtual private server (VPS) located outside New Zealand to ensure it stays reachable during homelab outages. No personal data is collected by the status page - only uptime metrics. No third-party cloud services (AWS, Google Cloud, Azure, etc.) are used for storage.</p>
         <p>Network traffic passes through Cloudflare for DDoS protection and tunnelling - they may process IP addresses and request metadata in transit. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's Privacy Policy</a>.</p>
         <p>Some outbound traffic is routed through ProtonVPN. See <a href="https://protonvpn.com/privacy-policy" target="_blank">ProtonVPN's Privacy Policy</a>.</p>
 
@@ -92,7 +96,7 @@
         <p>SearXNG queries: not stored beyond the duration of the request.</p>
         <p>Open WebUI conversations: retained in your account until deleted.</p>
         <p>Tracearr tracking data: retained until deleted or your account is removed.</p>
-        <p>Uptime Kuma: no personal data is stored or retained.</p>
+        <p>Uptime Kuma: no personal data is stored or retained. Runs on a VPS; only uptime monitoring metrics are kept.</p>
         <p>FMHY Docs: server access logs only, retained for a limited period then cleared.</p>
         <p>AzuraCast: listener logs retained for a limited period, then cleared. Station config retained for the lifetime of the service.</p>
         <p>slskd: transfer logs retained for a limited period. Shared files retained until removed by the administrator.</p>
@@ -121,7 +125,9 @@
 
         <h3>4. Availability &amp; Reliability</h3>
         <p>These are hobby services provided as-is, with no uptime guarantees. Maintenance, downtime, and data loss are possible. Do not rely on these services for anything critical.</p>
+        <p>The status page (<a href="https://uptime.crapcraft.nz" target="_blank">uptime.crapcraft.nz</a>) runs on a separate VPS and remains available independently of the homelab, so you can check service status during outages or maintenance windows.</p>
         <p>The administrator reserves the right to modify, suspend, or shut down any service at any time, with or without notice.</p>
+        <p>Uptime Kuma (status monitoring) is hosted on a separate VPS to provide 24/7 service monitoring independent of the homelab infrastructure.</p>
 
         <h3>5. Content You Upload</h3>
         <p>You retain ownership of content you upload. By uploading, you grant the administrator a limited right to store and serve that content to you as part of the service.</p>
