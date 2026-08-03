@@ -28,6 +28,17 @@ header {
   font-size: 22px;
 }
 
+.header-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #666;
+  color: white;
+}
+
 #currentTime {
   width: 100%;
   text-align: left;
