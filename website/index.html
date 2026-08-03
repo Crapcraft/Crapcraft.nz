@@ -13,10 +13,15 @@
     <body>
         <header>
             <div class="header-top">
-                <img src="./images/logo.png" alt="logo"></img>
-                <div class="header-front-text">
-                    <h1>Crapcraft.nz</h1>
-                    <p>A simple homelab with useful services</p>
+                <div class="header-box">
+                    <img src="./images/logo.png" alt="logo"></img>
+                    <div class="header-front-text">
+                        <h1>Crapcraft.nz</h1>
+                        <p>A simple homelab with useful services</p>
+                    </div>
+                </div>
+                <div class="header-box">
+                    <iframe src="https://kuma.crapcraft.nz/v1/iframe/uptimekuma?slug=crapcraft&theme=dark&api_url=https%3A%2F%2Fuptime.crapcraft.nz&showTitle=false" allowtransparency="true" style="width: 100%; height: 76px; border: 0"></iframe>
                 </div>
                 <ul class="topnav">
                     <li><a href="./privacy/">Privacy/TOS</a></li>
@@ -83,7 +88,27 @@
                         </a>
                         <h3><a href="https://fmd.crapcraft.nz">Find My Device</a></h3>
                     </div>
+                    <div class="article-box">
+                        <a href="https://fmhy.crapcraft.nz">
+                            <img src="images/fmhy.svg" style="width: 42px; height: 42px" />
+                        </a>
+                        <h3><a href="https://fmhy.crapcraft.nz">FMHY</a></h3>
+                    </div>
+                    <div class="article-box">
+                        <a href="https://vault.crapcraft.nz">
+                            <img src="images/vaultwarden.svg" style="width: 42px; height: 42px" />
+                        </a>
+                        <h3><a href="https://vault.crapcraft.nz">Vaultwarden</a></h3>
+                    </div>
+                    <div class="article-box">
+                        <a href="https://notes.crapcraft.nz">
+                            <img src="images/anchor.svg" style="width: 42px; height: 42px" />
+                        </a>
+                        <h3><a href="https://notes.crapcraft.nz">Anchor</a></h3>
+                    </div>
                 </div>
+            </article>
+            <nav>
                 <h2>Arr Stack/Infrastructure</h2>
                 <div class="article-links">
                     <div class="article-box">
@@ -137,24 +162,6 @@
                         <h3><a href="https://qb.crapcraft.nz">qBittorrent</a></h3>
                         <p>Version: <span id="qbittorrent-version">...</span></p>
                     </div>
-                </div>
-            </article>
-            <nav>
-                <div class="nav-frame">
-                    <a href="https://radio.crapcraft.nz/public/homepage">
-                        <p><strong>Crapcraft Minecraft FM</strong></p>
-                    </a>
-                    <iframe src="https://radio.crapcraft.nz/public/homepage/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
-                    <a href="https://radio.crapcraft.nz/public/crapcraft.nz">
-                        <p><strong>Crapcraft FM</strong></p>
-                    </a>
-                    <iframe src="https://radio.crapcraft.nz/public/crapcraft.nz/embed?theme=dark&bg_color=262626&rounded=1&hide_volume=1&hide_streams=1" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; height: 150px; border: 0"></iframe>
-                </div>
-                <a href="https://uptime.crapcraft.nz">
-                    <p><strong>Uptime Kuma</strong></p>
-                </a>
-                <div class="nav-links">
-                    <iframe src="https://kuma.crapcraft.nz/v1/iframe/uptimekuma?slug=crapcraft&theme=dark&api_url=https%3A%2F%2Fuptime.crapcraft.nz&showTitle=false" allowtransparency="true" style="width: 100%; height: 100px; border: 0"></iframe>
                 </div>
             </nav>
         </main>
