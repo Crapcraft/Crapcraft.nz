@@ -129,8 +129,7 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-/* Change color on hover */
-ul.topnav li a:hover {
+.topnav a:hover {
   background-color: #dddddd;
   color: black;
   border-radius: 25px;

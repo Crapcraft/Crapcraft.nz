@@ -129,10 +129,41 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-.topnav a:hover {
+/* Change color on hover */
+ul.topnav li a:hover {
   background-color: #dddddd;
   color: black;
   border-radius: 25px;
+}
+
+.article-links {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #262626;
+  color: white;
+}
+
+.article-box {
+  padding: 5px;
+}
+
+.article-box h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-box a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
 }
 
 @media (max-width: 600px) {
