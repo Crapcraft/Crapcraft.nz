@@ -170,6 +170,11 @@ ul.topnav li a:hover {
   color: white;
 }
 
+.warning {
+  font-size: 50px;
+  color: red;
+}
+
 @media (max-width: 600px) {
   nav {
     width: 100%;
