@@ -105,6 +105,10 @@ footer p {
   margin: 3px 0;
 }
 
+footer a {
+  color: #ffffff;
+}
+
 main {
   display: flex;
   justify-content: center;

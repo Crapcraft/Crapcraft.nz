@@ -188,6 +188,10 @@ footer p {
   margin: 3px 0;
 }
 
+footer a {
+  color: #ffffff;
+}
+
 main {
   display: flex;
   flex: 1;
