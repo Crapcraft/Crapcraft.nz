@@ -64,10 +64,10 @@ header a {
 }
 
 nav {
-  width: 30%;
+  width: 10%;
   background: #262626;
   color: white;
-  padding: 20px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -110,7 +110,7 @@ nav a {
 
 article {
   padding: 20px;
-  width: 70%;
+  width: 100%;
   background-color: #241818;
   color: white;
 }
