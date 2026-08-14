@@ -1,1 +1,1 @@
-# no ai allowed 
+no ai allowed 
