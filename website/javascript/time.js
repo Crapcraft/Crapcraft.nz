@@ -8,3 +8,4 @@ const _DateAndTime = () => {
 
 setInterval(_DateAndTime, 0);
 _DateAndTime();
+//if you want to know what this does just goto the stack overflow page

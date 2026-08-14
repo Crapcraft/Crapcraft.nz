@@ -20,3 +20,5 @@ fetch("./stats.json")
       document.getElementById("immich-photos").textContent = data.Photos;
       document.getElementById("immich-videos").textContent = data.Videos;
     });
+  //i dont know the exact stackoverflow page i got this from but all this does is grab the stats from stats.json
+  //and stores it as i call it "html variables" so that the html can display the stats
