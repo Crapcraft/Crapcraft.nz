@@ -14,9 +14,6 @@ fetch("./stats.json")
       document.getElementById("bazarr-version").textContent = data.BazarrVersion;
       document.getElementById("openwebui-version").textContent = data.OpenwebuiVersion;
       document.getElementById("qbittorrent-version").textContent = data.QbittorrentVersion;
-      document.getElementById("tracearr-sessions").textContent = data.TotalSessions;
-      document.getElementById("tracearr-streams").textContent = data.ActiveStreams;
-      document.getElementById("tracearr-users").textContent = data.TotalUsers;
       document.getElementById("immich-photos").textContent = data.Photos;
       document.getElementById("immich-videos").textContent = data.Videos;
     });

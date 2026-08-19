@@ -207,23 +207,6 @@ def qbittorrent():
             "QbittorrentVersion": ["Error"]
         }
 
-#def tracearr(): #commented as Crapcraft.nz no longer hosts Tracearr
-#    try:
-#        response = requests.get(f"{TRACEARR_URL}/api/v1/public/stats", headers=TRACEARR_HEADERS)
-#        data = response.json()
-#        return {
-#            "ActiveStreams": data["activeStreams"],
-#            "TotalSessions": data["totalSessions"],
-#            "TotalUsers": data["totalUsers"]
-#        }
-#    except:
-#        return {
-#            "ActiveStreams": ["Error"],
-#            "TotalSessions": ["Error"],
-#            "TotalUsers": ["Error"]
-#        }
-
-
 def immich():
     try:
         response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
@@ -251,7 +234,6 @@ def results():
         stats.update(bazarr())
         stats.update(openwebui())
         stats.update(qbittorrent())
-#        stats.update(tracearr())
         stats.update(immich())
     except:
         print("error")
@@ -272,6 +254,5 @@ lidarr()
 bazarr()
 openwebui()
 qbittorrent()
-#tracearr()
 immich()
 results()
