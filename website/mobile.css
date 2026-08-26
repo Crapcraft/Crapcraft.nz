@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 header {
@@ -64,7 +65,7 @@ header a {
 }
 
 nav {
-  width: 60px;
+  width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -186,13 +187,4 @@ ul.topnav li a {
   background-color: #dddddd;
   color: black;
   border-radius: 25px;
-}
-
-@media (max-width: 480px) {
-  main {
-    flex-direction:column-reverse
-  }
-  nav, article {
-    width: 100%;
-  }
 }
