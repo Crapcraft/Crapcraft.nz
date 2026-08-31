@@ -27,12 +27,22 @@
                     <li><a href="./contact/">Contact</a></li>
                     <li><a href="./about/">About</a></li>
                 </ul>
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="./guides/">Guides</a>
+                    <a href="./privacy/">Privacy/TOS</a>
+                    <a href="./contact/">Contact</a>
+                    <a href="./about/">About</a>
+                </div>
+                <div id="button">
+                    <button class="openbtn" onclick="openNav()">&#9776;</button>
+                </div>
             </div>
             <div id="currentTime"></div>
         </header>
         <main>
             <article>
-                <h1>Welcome to Crapcraft.nz go to Guides to learn how to make a account</h1>
+                <h2>Welcome to Crapcraft.nz go to Guides to learn how to make a account</h2>
                 <h3>Links</h3>
                 <div class="article-links">
                     <div class="article-box">
@@ -170,5 +180,6 @@
         <script src="javascript/stats.js"></script><!-- this script grabs the data from stats.json and sets it so the html is able to grab and display the data-->
         <script src="javascript/version.js"></script><!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
         <script src="javascript/time.js"></script>
+        <script src="javascript/mobilenav.js"></script>
     </body>
 </html>
