@@ -158,17 +158,17 @@ def sonarr():
         }
 
 #lidarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-def lidarr():
-    try:
-        response = requests.get(f"{LIDARR_URL}/api/v1/system/status", headers=LIDARR_HEADERS)
-        data = response.json()
-        return {
-            "LidarrVersion": data["version"],
-        }
-    except:
-        return {
-            "LidarrVersion": ["Error"]
-        }
+#def lidarr():
+#    try:
+#        response = requests.get(f"{LIDARR_URL}/api/v1/system/status", headers=LIDARR_HEADERS)
+#        data = response.json()
+#        return {
+#            "LidarrVersion": data["version"],
+#        }
+#    except:
+#        return {
+#            "LidarrVersion": ["Error"]
+#        }
 
 def bazarr():
     try:
