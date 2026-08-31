@@ -47,11 +47,11 @@ SONARR_HEADERS = {
 
 #grabs the url and api key from .env and sets them as variables
 #uses the LIDARR_KEY variable to add the api key to LIDARR_HEADERS so the api will accept the requests
-LIDARR_URL = os.getenv("LIDARR_URL")
-LIDARR_KEY = os.getenv("LIDARR_KEY")
-LIDARR_HEADERS = {
-    "X-API-Key": LIDARR_KEY
-}
+#LIDARR_URL = os.getenv("LIDARR_URL")
+#LIDARR_KEY = os.getenv("LIDARR_KEY")
+#LIDARR_HEADERS = {
+#    "X-API-Key": LIDARR_KEY
+#}
 
 #grabs the url and api key from .env and sets them as variables
 #uses the BAZARR_KEY variable to add the api key to BAZARR_HEADERS so the api will accept the requests
@@ -230,7 +230,7 @@ def results():
         stats.update(prowlarr())
         stats.update(radarr())
         stats.update(sonarr())
-        stats.update(lidarr())
+#        stats.update(lidarr())
         stats.update(bazarr())
         stats.update(openwebui())
         stats.update(qbittorrent())
@@ -250,7 +250,7 @@ seerr()
 prowlarr()
 radarr()
 sonarr()
-lidarr()
+#lidarr()
 bazarr()
 openwebui()
 qbittorrent()
