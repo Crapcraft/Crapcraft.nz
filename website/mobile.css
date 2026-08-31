@@ -39,9 +39,7 @@ header {
 }
 
 #currentTime {
-  visibility: hidden;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 header img {
@@ -164,9 +162,6 @@ main {
 
 /* Style the topnav */
 ul.topnav {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
   display: none;
 }
 
