@@ -40,6 +40,7 @@ header {
 }
 
 #currentTime {
+  visibility: visible;
   width: 100%;
   text-align: left;
   font-size: 14px;
@@ -48,6 +49,7 @@ header {
 header img {
   height: 60px;
   width: auto;
+  visibility: visible;
 }
 
 header a {
@@ -175,6 +177,9 @@ ul.topnav {
   padding: 0;
   background-color: #333333;
   border-radius: 25px;
+  width: auto;
+  height: auto;
+  visibility: visible;
 }
 
 /* Style links in topnav */
@@ -182,6 +187,7 @@ ul.topnav li a {
   display: block;
   color: #f1f1f1;
   padding: 14px 16px;
+  visibility: visible;
   text-decoration: none;
 }
 
@@ -189,13 +195,4 @@ ul.topnav li a {
   background-color: #dddddd;
   color: black;
   border-radius: 25px;
-}
-
-@media (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
-  nav, article {
-    width: 100%;
-  }
 }
