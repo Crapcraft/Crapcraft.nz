@@ -55,11 +55,11 @@ SONARR_HEADERS = {
 
 #grabs the url and api key from .env and sets them as variables
 #uses the BAZARR_KEY variable to add the api key to BAZARR_HEADERS so the api will accept the requests
-BAZARR_URL = os.getenv("BAZARR_URL")
-BAZARR_KEY = os.getenv("BAZARR_KEY")
-BAZARR_HEADERS = {
-    "X-API-Key": BAZARR_KEY
-}
+#BAZARR_URL = os.getenv("BAZARR_URL")
+#BAZARR_KEY = os.getenv("BAZARR_KEY")
+#BAZARR_HEADERS = {
+#    "X-API-Key": BAZARR_KEY
+#}
 
 #grabs the openwebui url from the .env and sets it as a variable
 OPENWEBUI_URL = os.getenv("OPENWEBUI_URL")
@@ -70,12 +70,6 @@ QBITTORRENT_URL = os.getenv("QBITTORRENT_URL")
 QBITTORRENT_KEY = os.getenv("QBITTORRENT_KEY")
 QBITTORRENT_HEADERS = {
     "Authorization": f"Bearer {QBITTORRENT_KEY}"  
-}
-
-TRACEARR_URL = os.getenv("TRACEARR_URL")
-TRACEARR_KEY = os.getenv("TRACEARR_KEY")
-TRACEARR_HEADERS = {
-    "Authorization": f"Bearer {TRACEARR_KEY}"
 }
 
 IMMICH_URL = os.getenv("IMMICH_URL")
@@ -170,17 +164,17 @@ def sonarr():
 #            "LidarrVersion": ["Error"]
 #        }
 
-def bazarr():
-    try:
-        response = requests.get(f"{BAZARR_URL}/api/system/status", headers=BAZARR_HEADERS)
-        status = response.json()["data"]
-        return {
-            "BazarrVersion": status.get("bazarr_version", "Unknown"),
-        }
-    except:
-        return {
-            "BazarrVersion": ["Error"],
-        }
+#def bazarr():
+#    try:
+#        response = requests.get(f"{BAZARR_URL}/api/system/status", headers=BAZARR_HEADERS)
+#        status = response.json()["data"]
+#        return {
+#            "BazarrVersion": status.get("bazarr_version", "Unknown"),
+#        }
+#    except:
+#        return {
+#            "BazarrVersion": ["Error"],
+#        }
 
 #openwebui function that only currently grabs the current software version will most likely replace with real stats like seerrs stats at some point
 def openwebui():
@@ -231,7 +225,7 @@ def results():
         stats.update(radarr())
         stats.update(sonarr())
 #        stats.update(lidarr())
-        stats.update(bazarr())
+#        stats.update(bazarr())
         stats.update(openwebui())
         stats.update(qbittorrent())
         stats.update(immich())
@@ -251,7 +245,7 @@ prowlarr()
 radarr()
 sonarr()
 #lidarr()
-bazarr()
+#bazarr()
 openwebui()
 qbittorrent()
 immich()
