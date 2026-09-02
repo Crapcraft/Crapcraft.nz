@@ -46,25 +46,6 @@ SONARR_HEADERS = {
 }
 
 #grabs the url and api key from .env and sets them as variables
-#uses the LIDARR_KEY variable to add the api key to LIDARR_HEADERS so the api will accept the requests
-#LIDARR_URL = os.getenv("LIDARR_URL")
-#LIDARR_KEY = os.getenv("LIDARR_KEY")
-#LIDARR_HEADERS = {
-#    "X-API-Key": LIDARR_KEY
-#}
-
-#grabs the url and api key from .env and sets them as variables
-#uses the BAZARR_KEY variable to add the api key to BAZARR_HEADERS so the api will accept the requests
-#BAZARR_URL = os.getenv("BAZARR_URL")
-#BAZARR_KEY = os.getenv("BAZARR_KEY")
-#BAZARR_HEADERS = {
-#    "X-API-Key": BAZARR_KEY
-#}
-
-#grabs the openwebui url from the .env and sets it as a variable
-OPENWEBUI_URL = os.getenv("OPENWEBUI_URL")
-
-#grabs the url and api key from .env and sets them as variables
 #uses the QBITTORRENT_KEY variable to add the api key to QBITTORRENT_HEADERS so the api will accept the requests
 QBITTORRENT_URL = os.getenv("QBITTORRENT_URL")
 QBITTORRENT_KEY = os.getenv("QBITTORRENT_KEY")
@@ -151,44 +132,6 @@ def sonarr():
             "SonarrVersion": ["Error"]
         }
 
-#lidarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-#def lidarr():
-#    try:
-#        response = requests.get(f"{LIDARR_URL}/api/v1/system/status", headers=LIDARR_HEADERS)
-#        data = response.json()
-#        return {
-#            "LidarrVersion": data["version"],
-#        }
-#    except:
-#        return {
-#            "LidarrVersion": ["Error"]
-#        }
-
-#def bazarr():
-#    try:
-#        response = requests.get(f"{BAZARR_URL}/api/system/status", headers=BAZARR_HEADERS)
-#        status = response.json()["data"]
-#        return {
-#            "BazarrVersion": status.get("bazarr_version", "Unknown"),
-#        }
-#    except:
-#        return {
-#            "BazarrVersion": ["Error"],
-#        }
-
-#openwebui function that only currently grabs the current software version will most likely replace with real stats like seerrs stats at some point
-def openwebui():
-    try:
-        response = requests.get(f"{OPENWEBUI_URL}/api/version")
-        data = response.json()
-        return {
-            "OpenwebuiVersion": data["version"],
-        }
-    except:
-        return {
-            "OpenwebuiVersion": ["Error"]
-        }
-
 #qbittorrent function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
 def qbittorrent():
     try:
@@ -224,9 +167,6 @@ def results():
         stats.update(prowlarr())
         stats.update(radarr())
         stats.update(sonarr())
-#        stats.update(lidarr())
-#        stats.update(bazarr())
-        stats.update(openwebui())
         stats.update(qbittorrent())
         stats.update(immich())
     except:
@@ -244,9 +184,6 @@ seerr()
 prowlarr()
 radarr()
 sonarr()
-#lidarr()
-#bazarr()
-openwebui()
 qbittorrent()
 immich()
 results()
