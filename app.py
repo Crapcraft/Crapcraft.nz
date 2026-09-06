@@ -2,8 +2,8 @@
 import requests
 import os
 import json
-from dotenv import load_dotenv 
-load_dotenv() 
+from dotenv import load_dotenv
+load_dotenv()
 
 #grabs the url and api key from .env and sets them as variables
 #uses the JF_API variable to add the api key to JF_HEADERS so the api will accept the requests
@@ -38,7 +38,7 @@ RADARR_HEADERS = {
 }
 
 #grabs the url and api key from .env and sets them as variables
-#uses the RADARR_KEY variable to add the api key to RADARR_HEADERS so the api will accept the requests
+#uses the SONARR_KEY variable to add the api key to SONARR_HEADERS so the api will accept the requests
 SONARR_URL = os.getenv("SONARR_URL")
 SONARR_KEY = os.getenv("SONARR_KEY")
 SONARR_HEADERS = {
@@ -50,7 +50,7 @@ SONARR_HEADERS = {
 QBITTORRENT_URL = os.getenv("QBITTORRENT_URL")
 QBITTORRENT_KEY = os.getenv("QBITTORRENT_KEY")
 QBITTORRENT_HEADERS = {
-    "Authorization": f"Bearer {QBITTORRENT_KEY}"  
+    "Authorization": f"Bearer {QBITTORRENT_KEY}"
 }
 
 IMMICH_URL = os.getenv("IMMICH_URL")
@@ -61,129 +61,88 @@ IMMICH_HEADERS = {
 
 #jellyfin function that grabs the url from variable and uses headers to insert the api key into the http/api request and then filters the data only keeping MovieCount EpisodeCount and SongCount
 def jellyfin():
-    try:
-        response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS)
-        data = response.json()
-        return {
-            "MovieCount": data["MovieCount"],
-            "EpisodeCount": data["EpisodeCount"],
-            "SongCount": data["SongCount"]
-        }
-    except:
-        return {
-            "MovieCount": data["Error"],
-            "EpisodeCount": data["Error"],
-            "SongCount": data["Error"]
-        }
+    response = requests.get(f"{JELLYFIN_URL}/Items/Counts", headers=JF_HEADERS)
+    data = response.json()
+    return {
+        "MovieCount": data["MovieCount"],
+        "EpisodeCount": data["EpisodeCount"],
+        "SongCount": data["SongCount"]
+    }
 
 #seerr function that when run querys the api and filters out results only keeping total, pending and approved
 def seerr():
-    try:
-        response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS)
-        data = response.json()
-        return {
-            "RequestsTotal": data["total"],
-            "RequestsPending": data["pending"],
-            "RequestsApproved": data["approved"],
-        }
-    except:
-        return {
-            "RequestsTotal": data["Error"],
-            "RequestsPending": data["Error"],
-            "RequestsApproved": data["Error"],
-        }
+    response = requests.get(f"{SEERR_URL}/api/v1/request/count", headers=SEERR_HEADERS)
+    data = response.json()
+    return {
+        "RequestsTotal": data["total"],
+        "RequestsPending": data["pending"],
+        "RequestsApproved": data["approved"],
+    }
 
 #prowlarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
 def prowlarr():
-    try:    
-        response = requests.get(f"{PROWLARR_URL}/api/v1/system/status", headers=PROWLARR_HEADERS)
-        data = response.json()
-        return {
-            "ProwlarrVersion": data["version"],
-        }
-    except:
-        return {
-            "ProwlarrVersion": ["Error"]
-        }
+    response = requests.get(f"{PROWLARR_URL}/api/v1/system/status", headers=PROWLARR_HEADERS)
+    data = response.json()
+    return {
+        "ProwlarrVersion": data["version"],
+    }
 
 #radarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
 def radarr():
-    try:
-        response = requests.get(f"{RADARR_URL}/api/v3/system/status", headers=RADARR_HEADERS)
-        data = response.json()
-        return {
-            "RadarrVersion": data["version"],
-        }
-    except:
-        return {
-            "RadarrVersion": ["Error"]
-        }
+    response = requests.get(f"{RADARR_URL}/api/v3/system/status", headers=RADARR_HEADERS)
+    data = response.json()
+    return {
+        "RadarrVersion": data["version"],
+    }
 
 #sonarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
 def sonarr():
-    try:
-        response = requests.get(f"{SONARR_URL}/api/v3/system/status", headers=SONARR_HEADERS)
-        data = response.json()
-        return {
-            "SonarrVersion": data["version"],
-        }
-    except:
-        return {
-            "SonarrVersion": ["Error"]
-        }
+    response = requests.get(f"{SONARR_URL}/api/v3/system/status", headers=SONARR_HEADERS)
+    data = response.json()
+    return {
+        "SonarrVersion": data["version"],
+    }
 
 #qbittorrent function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
 def qbittorrent():
-    try:
-        response = requests.get(f"{QBITTORRENT_URL}/api/v2/app/version", headers=QBITTORRENT_HEADERS)
-        return {
-            "QbittorrentVersion": response.text,
-        }
-    except:
-        return {
-            "QbittorrentVersion": ["Error"]
-        }
+    response = requests.get(f"{QBITTORRENT_URL}/api/v2/app/version", headers=QBITTORRENT_HEADERS)
+    return {
+        "QbittorrentVersion": response.text,
+    }
 
+#immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
-    try:
-        response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
-        data = response.json()
-        return {
-            "Photos": data["photos"],
-            "Videos": data["videos"]
-        }
-    except:
-        return {
-            "Photos": ["Error"],
-            "Videos": ["Error"]
-        }
+    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
+    data = response.json()
+
+    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)
+    data2 = response2.json()
+
+    return {
+        "Photos": data["photos"],
+        "Videos": data["videos"],
+        "Disk": data2["diskUse"],
+        "DiskAv": data2["diskAvailable"]
+    }
 
 #function that grabs the data from the service functions and sets it in stats{}
 def results():
-    try:
-        stats = {}
-        stats.update(jellyfin())
-        stats.update(seerr())
-        stats.update(prowlarr())
-        stats.update(radarr())
-        stats.update(sonarr())
-        stats.update(qbittorrent())
-        stats.update(immich())
-    except:
-        print("error")
+    stats = {}
+    stats.update(jellyfin())
+    stats.update(seerr())
+    stats.update(prowlarr())
+    stats.update(radarr())
+    stats.update(sonarr())
+    stats.update(qbittorrent())
+    stats.update(immich())
 
-#sends the data in stats{} to a .json file at ./website/stats.json
-#the reason it sends the data to ./website/stats.json is so caddy can serv the file as the root folder for caddy is ./website because it it was this folder the .env would be exposed
+    #sends the data in stats{} to a .json file at ./website/stats.json
+    #the reason it sends the data to ./website/stats.json is so caddy can serv the file as the root folder for caddy is ./website because it it was this folder the .env would be exposed
     with open("./website/stats.json", "w") as f:
         json.dump(stats, f)
         print(stats) #debugging will remove at some point
 
-#runs all the functions
-jellyfin()
-seerr()
-prowlarr()
-radarr()
-sonarr()
-qbittorrent()
-immich()
+    return stats
+
+#runs everything
 results()
