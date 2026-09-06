@@ -65,18 +65,15 @@
         <p><strong>Seerr:</strong> Username, media request history, linked Jellyfin account - used for media request management.</p>
         <p><strong>WireGuard VPN:</strong> No traffic logs are kept. WireGuard only holds handshake metadata (public keys, timestamps) in memory - nothing is written to disk unless debug logging is explicitly enabled.</p>
         <p><strong>Homepage &amp; Guides (crapcraft.nz):</strong> Static site, no accounts required. Covered by the minimal proxy logs described above - no personal data collected.</p>
-        <p><strong>Discord Bots:</strong> Discord user ID, message content when commands are triggered, server/channel IDs - used for bot functionality, not stored long-term unless a feature requires it.</p>
-        <p><strong>Map:</strong> No personal data collected - a public Minecraft world map viewer, no login required.</p>
         <p><strong>FMD:</strong> Device location, battery status, and push commands (all end-to-end encrypted - not readable by us), used for Find My Device functionality. FMD also maintains its own <a href="https://fmd.crapcraft.nz/privacy" target="_blank">privacy policy</a>.</p>
         <p><strong>Notes:</strong> Documents and content you create, username via Authentik SSO - used for note-taking and document storage.</p>
         <p><strong>Vaultwarden:</strong> Encrypted vault data (client-side encrypted - not readable by us), account email, IP address - used for password manager functionality.</p>
         <p><strong>ntfy:</strong> Topic subscriptions, notification delivery metadata - used for push notifications for platform services. Hosted on the privately owned VPS (outside New Zealand).</p>
         <p><strong>SearXNG:</strong> Search queries (not logged or stored beyond the request) - used for privacy-respecting search aggregation.</p>
-        <p><strong>Open WebUI:</strong> AI conversation history, username via Authentik LDAP - used for the AI chat interface.</p>
         <p><strong>Uptime Kuma:</strong> No personal data collected via the public status page - service uptime metrics only. Hosted on a separate VPS (outside New Zealand) so the status page remains available even when the homelab is down or under maintenance.</p>
         <p><strong>FMHY Docs:</strong> Server access logs only (IP, timestamp, user-agent) - no accounts required, used for a static documentation site.</p>
-        <p><strong>Zipline:</strong> Files uploaded by the administrator, access timestamps, IP addresses of viewers - used as a CDN for hosting publicly viewable files (images, video, audio, etc.); upload access is restricted to the administrator.</p>
-        <p><strong>Media Automation (Sonarr, Radarr, Prowlarr, Bazarr, Lidarr, qBittorrent):</strong>Access is gated by a reverse-proxy login (Authentik) placed in front of them. Each tool separately logs search and download history and indexer API interactions - used for automated media acquisition and management; access is restricted to authorised users.</p>
+        <p><strong>Zipline:</strong> Files uploaded by the administrator, access timestamps, IP addresses of viewers - used as a CDN for hosting publicly viewable files (images, video, audio, etc.)</p>
+        <p><strong>Media Automation (Sonarr, Radarr, Prowlarr, qBittorrent):</strong>Access is gated by a reverse-proxy login (Authentik) placed in front of them. Each tool separately logs search and download history and indexer API interactions - used for automated media acquisition and management; access is restricted to authorised users.</p>
         <p>Reverse-proxy logs contain no personal information (no IPs, user agents, or headers). Some individual services may log IP addresses as part of normal operation for security purposes; these are never sold, shared with third parties, or used for advertising.</p>
         <p>Note on encrypted services: FMD and Vaultwarden use client-side or end-to-end encryption. The server stores encrypted data only - the administrator cannot read the contents under any circumstances.</p>
 
@@ -102,10 +99,7 @@
         <p>Notes content: retained until you delete it or your account is removed.</p>
         <p>Vaultwarden vault: retained until you delete it or your account is removed. Contents are encrypted and unreadable by the administrator.</p>
         <p>WireGuard VPN: no logs retained.</p>
-        <p>Map: no personal data stored.</p>
-        <p>Discord bot interactions: not persistently stored unless a feature explicitly requires it.</p>
         <p>SearXNG queries: not stored beyond the duration of the request.</p>
-        <p>Open WebUI conversations: retained in your account until deleted.</p>
         <p>Uptime Kuma: no personal data is stored or retained. Runs on a VPS; only uptime monitoring metrics are kept.</p>
         <p>FMHY Docs: server access logs only, retained for a limited period then cleared.</p>
         <p>Media automation data: search and download history retained for the lifetime of the service. Can be cleared on request.</p>
