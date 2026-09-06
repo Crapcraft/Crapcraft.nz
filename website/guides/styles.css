@@ -48,6 +48,7 @@ header {
 header img {
   height: 60px;
   width: auto;
+  visibility: visible;
 }
 
 header a {
@@ -122,7 +123,6 @@ ul.topnav {
   list-style-type: none;
   padding: 0;
   background-color: #333333;
-  border-radius: 25px;
 }
 
 /* Style links in topnav */
@@ -180,4 +180,58 @@ ul.topnav li a:hover {
     width: 100%;
     height: auto;
   }
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 0%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.kilroy {
+  margin-top: auto;
+  padding: 12px 0;
+  text-align: center;
+  visibility: hidden;
+}
+
+.kilroy img {
+  width: 300px;
+  height: auto;
+  visibility: hidden;
 }

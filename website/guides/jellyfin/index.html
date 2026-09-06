@@ -8,26 +8,40 @@
     
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
 
-    <link rel="stylesheet" href="styles.css">
+    <link href="mobile.css" rel="stylesheet" media="all" />
+    <link href="styles.css" rel="stylesheet" media="screen and (width >= 600px)" />
 </head>
 <body>
 <header>
     <div class="header-top">
         <div class="header-box">
-            <a href="../../">
-                <img src="../../images/logo.svg" alt="logo">
-            </a>
+            <img src="../../images/logo.svg" alt="logo"></img>
             <div class="header-front-text">
                 <h1>Crapcraft.nz</h1>
                 <p>A simple homelab with useful services</p>
             </div>
         </div>
         <ul class="topnav">
-          <li><a href="../../">Home</a></li>
-          <li><a href="../../privacy/">Privacy/TOS</a></li>
-          <li><a href="../../contact/">Contact</a></li>
-          <li><a href="../../about/">About</a></li>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../privacy/">Privacy/TOS</a></li>
+            <li><a href="../../contact/">Contact</a></li>
+            <li><a href="../../about/">About</a></li>
         </ul>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="../../">Home</a>
+            <a href="../../privacy/">Privacy/TOS</a>
+            <a href="../../contact/">Contact</a>
+            <a href="../../about/">About</a>
+            <div class="kilroy">
+                <a href="https://en.wikipedia.org/wiki/Kilroy_was_here">
+                    <img src="../../images/kilroy.svg" alt="Kilroy"/>
+                </a>
+            </div>
+        </div>
+        <div id="button">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+        </div>
     </div>
     <div id="currentTime"></div>
 </header>
@@ -55,5 +69,6 @@
 </footer>
     <script src="../../javascript/version.js"></script><!-- this script is simply to make updating the version number more easy by editing one file instead of all the files manually -->
     <script src="../../javascript/time.js"></script> 
+    <script src="../../javascript/mobilenav.js"></script>
 </body>
 </html>

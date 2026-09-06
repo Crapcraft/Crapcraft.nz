@@ -8,7 +8,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #262626;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 header {
@@ -16,8 +18,6 @@ header {
   padding: 15px 30px;
   color: white;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .header-top {
@@ -31,7 +31,6 @@ header {
 .header-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   align-items: flex-start;
   border-radius: 12px;
   padding: 5px;
@@ -40,20 +39,17 @@ header {
 }
 
 #currentTime {
-  width: 100%;
-  text-align: left;
-  font-size: 14px;
+  display: none;
 }
 
 header img {
-  height: 60px;
-  width: auto;
-  visibility: visible;
+  height: 0px;
+  width: 0;
+  visibility: hidden;
 }
 
 header a {
   text-decoration: none;
-  color: white;
 }
 
 .header-front-text h1 {
@@ -66,19 +62,74 @@ header a {
 }
 
 nav {
-  width: 60%;
+  width: 100%;
   background: #241818;
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-nav p {
-  text-align: left;
+nav img {
+  width: 0%;
 }
 
 nav a {
   color: #f1f1f1;
+}
+
+article {
+  padding: 20px;
+  width: 100%;
+  background-color: #241818;
+  color: white;
+}
+
+.article-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #262626;
+  color: white;
+}
+
+.article-box {
+  padding: 5px;
+}
+
+.article-box h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-box a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.badge {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 footer {
@@ -90,6 +141,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  left: 0;
+  bottom: 0;
 }
 
 .footer-content {
@@ -112,18 +165,12 @@ footer a {
 
 main {
   display: flex;
-  justify-content: center;
   flex: 1;
 }
 
 /* Style the topnav */
 ul.topnav {
-  border-radius: 25px;
-  margin: 0 0 0 auto;
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  background-color: #333333;
+  display: none;
 }
 
 /* Style links in topnav */
@@ -140,17 +187,20 @@ ul.topnav li a {
   border-radius: 25px;
 }
 
-@media (max-width: 600px) {
-  nav {
-    width: 100%;
-    height: auto;
-  }
-}
-
 /* The sidebar menu */
 .sidebar {
-  height: 0%; /* 100% Full-height */
+  height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  display: flex;
+  flex-direction: column;
 }
 
 /* The sidebar links */
@@ -179,9 +229,13 @@ ul.topnav li a {
 
 /* The button used to open the sidebar */
 .openbtn {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
 }
 
 .openbtn:hover {
@@ -192,11 +246,10 @@ ul.topnav li a {
   margin-top: auto;
   padding: 12px 0;
   text-align: center;
-  visibility: hidden;
 }
 
 .kilroy img {
   width: 300px;
   height: auto;
-  visibility: hidden;
+  visibility: visible;
 }
