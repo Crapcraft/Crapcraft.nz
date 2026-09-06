@@ -10,9 +10,10 @@ fetch("./stats.json")
       document.getElementById("prowlarr-version").textContent = data.ProwlarrVersion;
       document.getElementById("radarr-version").textContent = data.RadarrVersion;
       document.getElementById("sonarr-version").textContent = data.SonarrVersion;
-      document.getElementById("qbittorrent-version").textContent = data.QbittorrentVersion;
       document.getElementById("immich-photos").textContent = data.Photos;
       document.getElementById("immich-videos").textContent = data.Videos;
+      document.getElementById("immich-disk").textContent = data.Disk;
+      document.getElementById("immich-diskav").textContent = data.DiskAv;
     });
   //i dont know the exact stackoverflow page i got this from but all this does is grab the stats from stats.json
   //and stores it as i call it "html variables" so that the html can display the stats
