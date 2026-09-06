@@ -45,14 +45,6 @@ SONARR_HEADERS = {
     "X-API-Key": SONARR_KEY
 }
 
-#grabs the url and api key from .env and sets them as variables
-#uses the QBITTORRENT_KEY variable to add the api key to QBITTORRENT_HEADERS so the api will accept the requests
-QBITTORRENT_URL = os.getenv("QBITTORRENT_URL")
-QBITTORRENT_KEY = os.getenv("QBITTORRENT_KEY")
-QBITTORRENT_HEADERS = {
-    "Authorization": f"Bearer {QBITTORRENT_KEY}"
-}
-
 IMMICH_URL = os.getenv("IMMICH_URL")
 IMMICH_KEY = os.getenv("IMMICH_KEY")
 IMMICH_HEADERS = {
@@ -103,13 +95,6 @@ def sonarr():
         "SonarrVersion": data["version"],
     }
 
-#qbittorrent function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-def qbittorrent():
-    response = requests.get(f"{QBITTORRENT_URL}/api/v2/app/version", headers=QBITTORRENT_HEADERS)
-    return {
-        "QbittorrentVersion": response.text,
-    }
-
 #immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
     response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
@@ -133,7 +118,6 @@ def results():
     stats.update(prowlarr())
     stats.update(radarr())
     stats.update(sonarr())
-    stats.update(qbittorrent())
     stats.update(immich())
 
     #sends the data in stats{} to a .json file at ./website/stats.json
