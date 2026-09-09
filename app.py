@@ -100,7 +100,7 @@ def immich():
     response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS) #this calls the immich api to get the server stats (photos and videos)
     data = response.json()
 
-    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)#this calls the immich apt to get system storage info
+    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)  # This calls the Immich API to get system storage info.
     data2 = response2.json()
 
     return {
