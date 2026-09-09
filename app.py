@@ -97,10 +97,10 @@ def sonarr():
 
 #immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
-    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS)
+    response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS) #this calls the immich api to get the server stats (photos and videos)
     data = response.json()
 
-    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)
+    response2 = requests.get(f"{IMMICH_URL}/api/server/storage", headers=IMMICH_HEADERS)#this calls the immich apt to get system storage info
     data2 = response2.json()
 
     return {
