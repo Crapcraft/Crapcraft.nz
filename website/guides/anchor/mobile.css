@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: auto;
+  min-height: 0;
 }
 
 header {
@@ -251,23 +252,4 @@ ul.topnav li a {
   width: 300px;
   height: auto;
   visibility: visible;
-}
-
-.authentik-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  background-color: #2c2c2c;
-  border: 1px solid #444;
-  border-radius: 20px;
-}
-
-.authentik-tag img {
-  width: 16px;
-  height: 16px;
 }
