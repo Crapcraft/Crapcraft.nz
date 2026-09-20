@@ -7,9 +7,6 @@ fetch("./stats.json")
       document.getElementById("requests-total").textContent = data.RequestsTotal;
       document.getElementById("requests-pending").textContent = data.RequestsPending;
       document.getElementById("requests-approved").textContent = data.RequestsApproved;
-      document.getElementById("prowlarr-version").textContent = data.ProwlarrVersion;
-      document.getElementById("radarr-version").textContent = data.RadarrVersion;
-      document.getElementById("sonarr-version").textContent = data.SonarrVersion;
       document.getElementById("immich-photos").textContent = data.Photos;
       document.getElementById("immich-videos").textContent = data.Videos;
       document.getElementById("immich-disk").textContent = data.Disk;
