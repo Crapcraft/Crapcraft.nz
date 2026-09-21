@@ -21,30 +21,6 @@ SEERR_HEADERS = {
     "X-API-Key": SEERR_KEY
 }
 
-#grabs the url and api key from .env and sets them as variables
-#uses the PROWLARR_KEY variable to add the api key to PROWLARR_HEADERS so the api will accept the requests
-PROWLARR_URL = os.getenv("PROWLARR_URL")
-PROWLARR_KEY = os.getenv("PROWLARR_KEY")
-PROWLARR_HEADERS = {
-    "X-API-Key": PROWLARR_KEY
-}
-
-#grabs the url and api key from .env and sets them as variables
-#uses the RADARR_KEY variable to add the api key to RADARR_HEADERS so the api will accept the requests
-RADARR_URL = os.getenv("RADARR_URL")
-RADARR_KEY = os.getenv("RADARR_KEY")
-RADARR_HEADERS = {
-    "X-API-Key": RADARR_KEY
-}
-
-#grabs the url and api key from .env and sets them as variables
-#uses the SONARR_KEY variable to add the api key to SONARR_HEADERS so the api will accept the requests
-SONARR_URL = os.getenv("SONARR_URL")
-SONARR_KEY = os.getenv("SONARR_KEY")
-SONARR_HEADERS = {
-    "X-API-Key": SONARR_KEY
-}
-
 IMMICH_URL = os.getenv("IMMICH_URL")
 IMMICH_KEY = os.getenv("IMMICH_KEY")
 IMMICH_HEADERS = {
@@ -71,30 +47,6 @@ def seerr():
         "RequestsApproved": data["approved"],
     }
 
-#prowlarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-def prowlarr():
-    response = requests.get(f"{PROWLARR_URL}/api/v1/system/status", headers=PROWLARR_HEADERS)
-    data = response.json()
-    return {
-        "ProwlarrVersion": data["version"],
-    }
-
-#radarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-def radarr():
-    response = requests.get(f"{RADARR_URL}/api/v3/system/status", headers=RADARR_HEADERS)
-    data = response.json()
-    return {
-        "RadarrVersion": data["version"],
-    }
-
-#sonarr function that only currently grabs the current software version will replace with real stats like seerrs stats at some point
-def sonarr():
-    response = requests.get(f"{SONARR_URL}/api/v3/system/status", headers=SONARR_HEADERS)
-    data = response.json()
-    return {
-        "SonarrVersion": data["version"],
-    }
-
 #immich function that grabs photo/video counts from /statistics and disk usage from /storage, then merges both into one dict
 def immich():
     response = requests.get(f"{IMMICH_URL}/api/server/statistics", headers=IMMICH_HEADERS) #this calls the immich api to get the server stats (photos and videos)
@@ -115,9 +67,6 @@ def results():
     stats = {}
     stats.update(jellyfin())
     stats.update(seerr())
-    stats.update(prowlarr())
-    stats.update(radarr())
-    stats.update(sonarr())
     stats.update(immich())
 
     #sends the data in stats{} to a .json file at ./website/stats.json
