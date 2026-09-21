@@ -48,7 +48,7 @@
 <main>
     <nav>
         <h1>Privacy Policy and TOS</h1>
-        <p><em>Last updated: 18 September 2026</em></p>
+        <p><em>Last updated: 21 September 2026</em></p>
 
         <h2>Privacy Policy</h2>
 
@@ -60,7 +60,7 @@
         <p>The following is a summary of what data each service may collect:</p>
         <p><strong>All Services:</strong> The reverse proxy (Caddy) logs only the timestamp, HTTP method, host, requested path, status code, and response size. IP addresses, user agents, cookies, and all other request headers are <strong>not</strong> logged. Individual applications behind the proxy may keep their own minimal logs for security and debugging.</p>
         <p><strong>Authentik:</strong> Username, email address, hashed password, login timestamps, session tokens - used for account authentication and access control.</p>
-        <p><strong>Jellyfin:</strong> Username, playback history, media preferences, device info - used for media streaming functionality and watch history.</p>
+        <p><strong>Jellyfin:</strong> Username, playback history, media preferences, device info - used for media streaming functionality and watch history. This tracked activity is handled by Tracearr.</p>
         <p><strong>Immich:</strong> Photos and videos you upload, EXIF metadata (may include GPS location, camera info, timestamps) - used for photo library hosting, stored only for your use.</p>
         <p><strong>Seerr:</strong> Username, media request history, linked Jellyfin account - used for media request management.</p>
         <p><strong>WireGuard VPN:</strong> No traffic logs are kept. WireGuard only holds handshake metadata (public keys, timestamps) in memory - nothing is written to disk unless debug logging is explicitly enabled.</p>
@@ -149,8 +149,7 @@
         <p>No cookie consent banner is shown because only strictly necessary functional cookies are used. If that changes, a consent banner will be added.</p>
 
         <h3>2. Server Access Logs</h3>
-        <p>All HTTP requests to services under crapcraft.nz are logged in a minimal format. Each entry contains only the timestamp, HTTP method, host, requested path, status code, and response size. IP addresses, user agents, cookies, and other request headers are never written to the proxy logs.</p>
-        <p>Logs are stored locally and not shared externally. They are retained for a maximum of 7 days, then automatically cleared.</p>
+        <p>Server access logs are retained for 7 days for security and debugging purposes, then automatically cleared.</p>
 
         <h3>3. Analytics</h3>
         <p>We do not use Google Analytics, Plausible, or any third-party analytics platform. No behavioural tracking is performed.</p>
