@@ -149,7 +149,7 @@ ul.topnav li a {
 
 /* The sidebar menu */
 .sidebar {
-  height: 0%; /* 100% Full-height */
+  height: 100%; /* Full-height when opened by openNav() */
   width: 0; /* 0 width - change this with JavaScript */
 }
 
